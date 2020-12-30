@@ -1,1 +1,15 @@
-token
+#Random token
+To create a random token or password in GO Lang.
+
+##Install
+First you have to install the package:
+```console
+go get github.com/jojojojonas/token
+```
+
+##How to use
+Here is a small example how to create an random password:
+```go
+token := token.New(55)
+```
+
