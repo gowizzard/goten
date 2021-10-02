@@ -1,3 +1,3 @@
-module github.com/jojojojonas/goten
+module github.com/gowizzard/goten
 
 go 1.15
