@@ -17,7 +17,7 @@ go get github.com/gowizzard/goten
 Here is a small example how to create a random password without numbers and symbols. Only letters.
 
 ```go
-token := goten.New(50, nil)
+token := goten.Generate(50, nil)
 log.Println(token)
 ```
 
@@ -29,7 +29,7 @@ options := goten.Options{
     Symbols: true,
 }
 
-token := goten.New(50, &options)
+token := goten.Generate(50, &options)
 
 log.Println(token)
 ```

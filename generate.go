@@ -27,10 +27,10 @@ type Options struct {
 	Symbols bool
 }
 
-// New is to generate a new token
+// Generate is to generate a new token
 // The function check the parameter for the token
 // And set every loop anew random seed
-func New(length int, options *Options) string {
+func Generate(length int, options *Options) string {
 
 	char := letters
 	if options != nil {
