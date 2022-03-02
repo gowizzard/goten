@@ -10,37 +10,44 @@
 package goten
 
 import (
-	"fmt"
 	"math/rand"
 	"time"
 )
 
-// Characters for the token
-const char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOFQRSTUVWXYZ1234567890"
+// To save the letters, numbers, and symbols
+const (
+	letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOFQRSTUVWXYZ"
+	numbers = "1234567890"
+	symbols = "!#$%&()*+,-./:;<=>?@[]^_`{|}~"
+)
 
-func init() {
-
-	// Generate random seed, that the key is random
-	// The seed based on the current time with nano seconds
-	rand.Seed(time.Now().UnixNano())
-
+// Options is to set the options for the token generator
+type Options struct {
+	Numbers bool
+	Symbols bool
 }
 
-// Generate a new funktion
-func New(length int) string {
+// New is to generate a new token
+// The function check the parameter for the token
+// And set every loop anew random seed
+func New(length int, options *Options) string {
 
-	// Variable for the user token
-	var token string
-
-	// Range for token
-	for i := 0; i < length; i++ {
-
-		// Building an string
-		token = fmt.Sprintf("%s%s", token, string(char[rand.Intn(len(char))]))
-
+	char := letters
+	if options != nil {
+		if options.Numbers {
+			char += numbers
+		}
+		if options.Symbols {
+			char += symbols
+		}
 	}
 
-	// Return the token
+	var token string
+	for i := 0; i < length; i++ {
+		rand.Seed(time.Now().UnixNano())
+		token += string(char[rand.Intn(len(char))])
+	}
+
 	return token
 
 }
