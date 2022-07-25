@@ -30,7 +30,6 @@ options := goten.Options{
 }
 
 token := goten.Generate(50, &options)
-
 log.Println(token)
 ```
 
