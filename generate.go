@@ -9,7 +9,7 @@ import (
 const (
 	letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOFQRSTUVWXYZ"
 	numbers = "1234567890"
-	symbols = "!#$%&()*+,-./:;<=>?@[]^_`{|}~"
+	symbols = "!@#$%^&*"
 )
 
 // Options is to set the options for the token generator
