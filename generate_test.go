@@ -17,29 +17,65 @@ func TestGenerate(t *testing.T) {
 		{
 			length: 50,
 			options: goten.Options{
-				Numbers: false,
-				Symbols: false,
+				Uppercase: false,
+				Numbers:   false,
+				Symbols:   false,
 			},
 		},
 		{
 			length: 256,
 			options: goten.Options{
-				Numbers: true,
-				Symbols: false,
+				Uppercase: true,
+				Numbers:   false,
+				Symbols:   false,
 			},
 		},
 		{
 			length: 10,
 			options: goten.Options{
-				Numbers: false,
-				Symbols: true,
+				Uppercase: false,
+				Numbers:   true,
+				Symbols:   false,
 			},
 		},
 		{
 			length: 25,
 			options: goten.Options{
-				Numbers: true,
-				Symbols: true,
+				Uppercase: false,
+				Numbers:   false,
+				Symbols:   true,
+			},
+		},
+		{
+			length: 124,
+			options: goten.Options{
+				Uppercase: true,
+				Numbers:   true,
+				Symbols:   false,
+			},
+		},
+		{
+			length: 16,
+			options: goten.Options{
+				Uppercase: true,
+				Numbers:   false,
+				Symbols:   true,
+			},
+		},
+		{
+			length: 36,
+			options: goten.Options{
+				Uppercase: false,
+				Numbers:   true,
+				Symbols:   true,
+			},
+		},
+		{
+			length: 512,
+			options: goten.Options{
+				Uppercase: true,
+				Numbers:   true,
+				Symbols:   true,
 			},
 		},
 	}
