@@ -2,21 +2,16 @@ package goten
 
 import (
 	"math/rand"
+	"strings"
 	"time"
 )
 
 // To save the letters, numbers, and symbols
 const (
-	letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOFQRSTUVWXYZ"
+	letters = "abcdefghijklmnopqrstuvwxyz"
 	numbers = "1234567890"
 	symbols = "!@#$%^&*"
 )
-
-// Options is to set the options for the token generator
-type Options struct {
-	Numbers bool
-	Symbols bool
-}
 
 // Generate is to generate a new token
 // The function check the parameter for the token
@@ -25,6 +20,9 @@ func Generate(length int, options *Options) string {
 
 	char := letters
 	if options != nil {
+		if options.Uppercase {
+			char += strings.ToUpper(letters)
+		}
 		if options.Numbers {
 			char += numbers
 		}

@@ -25,8 +25,9 @@ And here is a small example how to create a random token with numbers and symbol
 
 ```go
 options := goten.Options{
-    Numbers: true,
-    Symbols: true,
+    Uppercase:  true,
+    Numbers:    true,
+    Symbols:    true,
 }
 
 token := goten.Generate(50, &options)
