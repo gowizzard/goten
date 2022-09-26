@@ -1,3 +1,7 @@
+// Copyright 2022 Jonas Kwiedor. All rights reserved.
+// Use of this source code is governed by the MIT
+// license that can be found in the LICENSE file.
+
 package goten
 
 import (
@@ -6,16 +10,16 @@ import (
 	"time"
 )
 
-// To save the letters, numbers, and symbols
+// letters, numbers, symbols are to save the information.
 const (
 	letters = "abcdefghijklmnopqrstuvwxyz"
 	numbers = "1234567890"
 	symbols = "!@#$%^&*"
 )
 
-// Generate is to generate a new token
-// The function check the parameter for the token
-// And set every loop anew random seed
+// Generate is to generate a new token. The function check the
+// parameter for the token and set every loop a new random
+// seed based on the actual unix time number of nanoseconds.
 func Generate(length int, options *Options) string {
 
 	char := letters
