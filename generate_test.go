@@ -1,3 +1,7 @@
+// Copyright 2022 Jonas Kwiedor. All rights reserved.
+// Use of this source code is governed by the MIT
+// license that can be found in the LICENSE file.
+
 package goten_test
 
 import (
@@ -6,8 +10,8 @@ import (
 	"testing"
 )
 
-// TestGenerate is to test the generate function
-// We simulate the generation and check the result
+// TestGenerate is to test the generate function with table
+// driven tests. We simulate the generation and check the result.
 func TestGenerate(t *testing.T) {
 
 	tests := []struct {
