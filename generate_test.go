@@ -96,3 +96,20 @@ func TestGenerate(t *testing.T) {
 	}
 
 }
+
+// BenchmarkGenerate is to test the Generate function with benchmark tests.
+func BenchmarkGenerate(b *testing.B) {
+
+	length, options := 64, goten.Options{
+		Uppercase: true,
+		Numbers:   true,
+		Symbols:   true,
+	}
+
+	b.ResetTimer()
+
+	for i := 0; i < b.N; i++ {
+		goten.Generate(length, &options)
+	}
+
+}
