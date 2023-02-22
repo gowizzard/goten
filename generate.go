@@ -10,6 +10,13 @@ import (
 	"time"
 )
 
+// Options is to set the options for the token generator.
+type Options struct {
+	Uppercase bool
+	Numbers   bool
+	Symbols   bool
+}
+
 // letters, numbers, symbols are to save the information.
 const (
 	letters = "abcdefghijklmnopqrstuvwxyz"
@@ -37,7 +44,7 @@ func Generate(length int, options *Options) string {
 
 	var token string
 	for i := 0; i < length; i++ {
-		rand.Seed(time.Now().UnixNano())
+		rand.NewSource(time.Now().UnixNano())
 		token += string(char[rand.Intn(len(char))])
 	}
 
